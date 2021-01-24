@@ -1,4 +1,220 @@
+
 <!DOCTYPE html>
 <html>
-    <h1>Hello</h1>
+<head>
+    <title>
+        Portfolio-Recommendinator
+    </title>
+    <link rel="icon" href="images/doof.png">
+<style>
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: url('images/bg1.jpg');
+}
+
+.button {
+  background-color: palegoldenrod; /* Green */
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 9px #999;
+  margin-left: 20px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.button:hover{
+  background-color: black;
+  color: antiquewhite;
+}
+
+.button:active {
+  background-color: black;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#section1 {
+  height: 100%;
+  align-content: center;
+  text-align: center;
+  margin: auto;
+  color: antiquewhite;
+  padding-top: 155px;
+  padding-bottom: 155px;
+  font-size: 20px;
+}
+
+#section2 {
+  height: 100vh;
+  align-content: center;
+  text-align: center;
+  margin: auto;
+  color: antiquewhite;
+  padding-top: 155px;
+  padding-bottom: 155px;
+}
+
+#section3 {
+  height: 100vh;
+  align-content: center;
+  text-align: center;
+  margin: auto;
+  color: antiquewhite;
+  padding-top: 155px;
+  padding-bottom: 155px;
+}
+
+#section4 {
+  height: 100vh;
+  align-content: center;
+  text-align: center;
+  margin: auto;
+  color: antiquewhite;
+  padding-top: 155px;
+  padding-bottom: 155px;
+}
+
+#section5 {
+  height: 100vh;
+  align-content: center;
+  text-align: center;
+  margin: auto;
+  color: antiquewhite;
+  padding-top: 155px;
+  padding-bottom: 155px;
+}
+
+#section6 {
+  height: 100vh;
+  align-content: center;
+  text-align: center;
+  margin: auto;
+  color: antiquewhite;
+  padding-top: 155px;
+  padding-bottom: 155px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="main" id="section1"> 
+  <img src="images/display.jpg" >
+  <p class="center">
+      Hey Perry the Platypus,<br> I have made an Evil-inator that recommends <br> you creative portfolios based on some questions.
+      <br><br>
+      With this inator I'll rule over the whole Tri-state area.
+      <br>So just click start and answer the questions.
+    </p>
+  <button class="button" onclick="window.location.href='#section2';">Start</button>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="main" id="section2">
+    <h1>1. What type of portfolio do you want?</h1>
+  <button class="button"  id="retro"   onClick="window.location.href='#section3'; " >Retro</button>
+  <button class="button"  id="classic" onClick="window.location.href='#section3'; " >Modern</button>
+  <button class="button" id="scifi"    onClick="window.location.href='#section3'; " >Sci-Fi</button>
+</div>
+<div class="main" id="section3">
+  <h1>2. Do you want your portfolio to be simple or complex?</h1>
+  <button class="button" onclick="window.location.href='#section4';" id="0">Simple</button>
+  <button class="button" onclick="window.location.href='#section4';" id="1">Complex</button>
+</div>
+<div class="main" id="section4">
+  <h1>3. Do you want your portfolio to be colourful or monochrome?</h1>
+  <button class="button" onclick="window.location.href='#section5';">Colourful</button>
+  <button class="button" onclick="window.location.href='#section5';">Monochrome</button>
+</div>
+<div class="main" id="section5">
+  <h1>4. Do you want your portfolio to be long or short?</h1>
+  <button class="button" onclick="window.location.href='#section6';">Long</button>
+  <button class="button" onclick="window.location.href='#section6';">Short</button>
+</div>
+<div class="main" id="section6">
+  <h1>5. Do you want your portfolio to be printable?</h1>
+  <button class="button" onclick="window.location.href='#section7';">Yes</button>
+  <button class="button" onclick="window.location.href='#section7';">No</button>
+</div>
+<div class="main"  id="section7">        
+    <h1 style="color:white; font-family:sans-serif; text-align: center; padding-top:3px;">
+        Recommended Portfolio
+    </h1>
+    <div style="margin-top: 16px;" >
+        <iframe style="width: 100%; height: 800px; border:3px solid black;" 
+        src="https://basement.studio/" id="Iframe"></iframe> 
+
+    </div>
+
+</div>
+<script>
+        
+        var first = Math.floor(Math.random() * 3);  
+        var second = Math.floor(Math.random() * 2);
+        // document.getElementById('retro').onclick = outside;
+        // document.getElementById('classic').onclick = outside;
+        // document.getElementById('scifi').onclick = outside;
+        // function outside(clicked) { 
+        //         first = this.id; 
+        //         console.log(this.id);
+        //     }
+        //     document.getElementById('0').onclick = inside;
+        //     document.getElementById('1').onclick = inside;
+
+
+        
+        // function inside(clicked) { 
+        //     second = this.id; 
+        //     console.log(this.id);
+        // }
+
+        var portfolios = {
+        "0"     : [
+            [   
+                "http://www.dollardreadful.com/"                   
+            ],
+            [   
+                "https://zach.dev/",
+                "http://eeerik.com/"
+
+            ]
+            ],
+        "1"   : [
+            [   
+                "http://www.marianopascual.me/",,
+                "http://ydirection.com/Singular/index.html",
+                "http://www.themestarz.net/html/selfer/?storefront=envato-elements"
+            ],
+            [   
+                "https://www.krissrealestate.com/",
+                "https://shantellmartin.art/"
+            ]
+            ],
+        "2"     : [
+            [   
+                "https://gruev.space/works",
+                "https://hoang.moe/"
+
+            ],
+            [   
+                "https://basement.studio/",
+                "https://www.danielepetrarolo.com/"
+            ]
+            ]
+        };
+        var items = portfolios[""+first][second];
+        var item = items[Math.floor(Math.random() * items.length)];
+        console.log(item);
+        document.getElementById('Iframe').src = item;
+
+
+</script>
+
+</body>
 </html>
