@@ -1,0 +1,49 @@
+.fx {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.fx canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 999;
+}
+
+.rgb-text-shift {
+  position: relative;
+  color: white;
+  @supports (mix-blend-mode:screen) {
+    color:#0f0;
+  }
+  @supports (mix-blend-mode:screen) {
+    &, &:before, &:after {
+      content: attr(text);
+      mix-blend-mode: screen;
+    }
+  }
+  &:before {
+     color:#f00;
+     position: absolute;
+     top:0;
+     left:-.075rem;
+  }
+  &:after {
+     color:#00f;
+     animation-delay:-0.33s;
+     position: absolute;
+     top:0;
+     z-index: 2;
+     left:.075rem;
+  }
+  a{
+    position: relative;
+    z-index: 3;
+  }
+}
