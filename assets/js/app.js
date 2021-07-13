@@ -137,7 +137,7 @@ Rogie = {
     // audio
     this.addTunes([{
       audio: "assets/audio/inkwell-isle.mp3",
-      name: "Some music I like "
+      name: "Some music that I like "
     }]);
 
     this.loadRandomTune();
