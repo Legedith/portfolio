@@ -137,16 +137,7 @@ Rogie = {
     // audio
     this.addTunes([{
       audio: "assets/audio/inkwell-isle.mp3",
-      name: "Inkwell Isle"
-    },{
-      audio: "assets/audio/maple-leaf-rag.mp3",
-      name: "Maple Leaf Rag"
-    },{
-      audio: "assets/audio/steamboat-willie.mp3",
-      name: "Steamboat Willie"
-    },{
-      audio: "assets/audio/delirium-tremens-rag.mp3",
-      name: "Delirium Tremens Rag"
+      name: "Some music I like "
     }]);
 
     this.loadRandomTune();
