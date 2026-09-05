@@ -1,48 +1,46 @@
-# Legedith — second edition
+# Legedith — Human ideas. Robot hands.
 
-Jatin Dehmiwal's portfolio. Vintage title cards, curious machines, and actual work.
+Jatin Dehmiwal's interactive robotics portfolio. A small robot, a blank page, and three real projects. Static HTML, CSS, and JavaScript. No build step, remote font, analytics, API key, or runtime dependency.
 
-A static HTML/CSS/JavaScript site. No package manager, build step, runtime API, external font, or analytics script is required for the new edition.
+## Play
 
-## Publish at the root
+Draw on the paper with a mouse, pen, or finger. The robot's two-joint arm follows using analytical inverse kinematics. Replay your sketch, request one of four procedural doodles, greet the robot, or switch on X-ray mode. Sound is off unless explicitly enabled. No microphone, camera, or device-motion permission is requested.
 
-The existing repository already has GitHub Pages enabled. To move this portfolio from `https://legedith.github.io/portfolio/` to `https://legedith.github.io/`:
+On the focused pad: arrow keys move the pen; Space lowers or lifts it; Enter replays; Escape stops. Tab leaves the pad. Project and biography dialogs support Escape, focus wrapping, and focus restoration. All project/contact links remain usable without JavaScript.
 
-1. In this repository's **Settings → General**, rename `portfolio` to **`legedith.github.io`**.
-2. In **Settings → Pages**, confirm **Deploy from a branch → main → / (root)**, then save if needed.
-3. Wait for the Pages deployment to finish and open the root URL. Verify the old `/portfolio/` URL redirects there too.
+Only the paper captures touch, so the rest of the page scrolls normally. Drawings stay in memory, are capped at 16 strokes / 1,800 points, and are not uploaded or saved. Animation stops when the lab leaves the viewport or the tab is hidden. System reduced motion and the manual motion toggle disable animated replay but keep drawing and presets usable.
 
-The repository name is required for a GitHub Pages user site. File changes alone cannot change the root address. The connector used for this refresh exposes content writes, not repository renaming or Pages settings.
+**This is a browser simulation, not a live robot or an AI model.** BrushOS is a separate physical prototype, linked from the first project card.
 
-All new asset paths are relative, so the site also works at the existing project URL before the rename. `portfolio/index.html` preserves old bookmarks after the move, including their query string and fragment when JavaScript is enabled. Search metadata already points at the intended root URL.
+## Publish at `https://legedith.github.io/`
 
-Official instructions: [Pages quickstart](https://docs.github.com/pages/quickstart), [renaming a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/renaming-a-repository).
+GitHub's user-site repository must be named **`legedith.github.io`**. The site currently lives in the `portfolio` repository. Code writes do not change the repository name, and the connected tool does not expose repository renaming or Pages administration.
 
-## Edit
+In this repository's **Settings → General**, rename `portfolio` to `legedith.github.io`. In **Settings → Pages**, confirm **Deploy from a branch → main → / (root)**. Wait for the Pages build to finish. No website-code changes are needed for this move.
 
-- `index.html`: biography, project cards, writing, contact links, and inline illustrations.
-- `assets/portfolio.css`: colours, layout, responsive rules, and print/reduced-motion styles.
-- `assets/portfolio.js`: optional filters, question switcher, effects preference, and copy-email control.
-- `SOURCES.md`: public sources and the limits of the claims used in the portfolio.
-- `archive-2021.html`: the earlier title-card site, with its original assets and without its old analytics snippet.
+The same files work before the rename at `/portfolio/` and after it at `/`. Relative assets are used throughout. `portfolio/index.html` preserves the old `/portfolio/` address after the move; its redirect carries the query string and fragment when JavaScript is available. Canonical metadata and the sitemap point at the intended root URL.
 
-All six projects and every navigation/contact link remain available without JavaScript. Film effects can be switched off; reduced-motion preferences are respected. There is no fake chat, fabricated live telemetry, contact-form backend, or auto-updating biography.
+See [GitHub's user-site instructions](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
 
-## Preview and test
+## Edit and test
+
+- `index.html`: homepage, functional SVG robot, project cards, and dialogs.
+- `assets/lab.css`: responsive layout and visual/reduced-motion states.
+- `assets/lab.js`: bounded drawing history, inverse kinematics, playback, input handling, and dialogs.
+- `assets/lab-mark.svg`: favicon.
+- `SOURCES.md`: public content provenance.
 
 ```sh
 python3 -m http.server 8000
-# Open http://localhost:8000
 python3 scripts/check_site.py
-node --check assets/portfolio.js
+node --check assets/lab.js
+# Optional development-only dependency; not used by the website:
+python3 -m pip install playwright
+python3 scripts/test_browser.py --chromium /usr/bin/chromium
 ```
 
-The static checker uses Python's standard library. It runs in GitHub Actions on pushes and pull requests. It validates local page/asset links, fragment targets, page metadata, structured data, and the selected-project count. It does not make external requests or claim those websites are always available.
+GitHub Actions runs the static checker and JavaScript syntax check on pushes and pull requests. The offline Chromium suite was run locally at 12 viewport sizes, including 320px phones and landscape. It passed 35 interaction checks with no JavaScript runtime errors. The suite covers mouse and emulated touch drawing, scrolling outside the paper, replay consistency, joint geometry, rapid input, keyboard drawing, dialog focus, reduced motion, and no-JavaScript fallback. The committed report is `tests/browser-results.json`. This is not a physical-device test, Safari test, complete accessibility audit, or live-network performance result.
 
-The refresh was also checked in an offline Chromium renderer at widths 320, 390, 580, 768, 1024, and 1440 pixels, including filters, keyboard activation, reduced motion, copy fallback, and no-JavaScript rendering. These checks are not a full accessibility audit or a verification of a live Pages deployment.
+## History and rollback
 
-## Preserve and recover
-
-The original main commit is `f11bdc5fe6560e928faff5e5bbbd8ecb0a2f7a79`, preserved on `archive/pre-refresh-2026-09-05`. Existing legacy assets are retained. The original Firebase workflows are retired in favour of branch-based GitHub Pages and static checks; their originals remain on the backup branch. Revert the refresh commit to roll back without rewriting history.
-
-The 2021 archive intentionally keeps its original layout, motion, and audio behaviour. The new edition's accessibility and performance changes do not retroactively apply to that archive.
+The previous editorial version is preserved on `archive/before-robot-playground-2026-09-05`, at commit `f0894f7b9da6026374211753c117e1fdd74f15de`. The 2021 original remains on `archive/pre-refresh-2026-09-05` and at `archive-2021.html`. Existing legacy assets are untouched. The archived site's original motion/audio behavior is separate from this edition. Revert the robot-playground commit to restore the preceding homepage without rewriting history.

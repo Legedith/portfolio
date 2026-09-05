@@ -26,3 +26,9 @@ Reviewed 5 September 2026. This page records the public evidence behind the port
 - [AI thoughts](https://github.com/Legedith/ai-thoughts): working notes, not finished publications.
 
 Only public material is used. No private repository code, private employment material, sensitive contact data, or credentials are included. The five rotating questions are new editorial prompts, not quotes, live AI outputs, or claimed experimental findings.
+
+## Interactive edition — 5 September 2026
+
+The robot-playground edition uses the GitHub profile's robotics/agent focus and three compact project cards: BrushOS, Dungeons, and Space ExploARtion. Employment, location, award, and availability claims are not shown on this new homepage. The previous background notes above are retained as provenance for the archived editorial edition, not as a newly verified CV.
+
+LE-G1, the dialogue lines, the robot and project illustrations, and the procedural doodles are original interface elements. Its drawing behavior is deterministic two-link inverse kinematics with path replay; it does not learn, call an AI API, or connect to BrushOS. The UI explicitly labels it a browser simulation. Project artwork is not represented as recorded output or a product screenshot.

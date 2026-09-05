@@ -71,9 +71,9 @@ def check(skip_legacy=False):
         errors.append('Invalid Person structured data')
     doc = documents.get('index.html')
     if doc:
-        projects = [a for tag, a in doc.tags if a.get('data-category')]
-        if len(projects) != 6:
-            errors.append('Expected six selected projects')
+        projects = [a for tag, a in doc.tags if a.get('data-project')]
+        if len(projects) != 3:
+            errors.append('Expected three selected projects')
         if any(a.get('src', '').startswith(('http:', 'https:', '//')) for t, a in doc.tags if t == 'script'):
             errors.append('Unexpected third-party script')
     if not (ROOT / '.nojekyll').is_file():

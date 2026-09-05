@@ -17,4 +17,4 @@ jobs:
       - name: Validate static site
         run: python3 scripts/check_site.py
       - name: Check JavaScript syntax
-        run: node --check assets/portfolio.js
+        run: node --check assets/lab.js
