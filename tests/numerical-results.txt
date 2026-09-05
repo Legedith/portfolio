@@ -1,0 +1,72 @@
+TAP version 13
+# null-space: maximum finite-step error 0.000099 mm
+# trefoil: maximum sampled error 0.000054 mm
+# Subtest: Forward kinematics preserves all seven link lengths in 100 configurations
+ok 1 - Forward kinematics preserves all seven link lengths in 100 configurations
+  ---
+  duration_ms: 11.667234
+  type: 'test'
+  ...
+# Subtest: Analytic 3x7 Jacobian agrees with central finite differences
+ok 2 - Analytic 3x7 Jacobian agrees with central finite differences
+  ---
+  duration_ms: 22.13239
+  type: 'test'
+  ...
+# Subtest: Damped IK converges for 80 reachable, warm-started targets
+ok 3 - Damped IK converges for 80 reachable, warm-started targets
+  ---
+  duration_ms: 13.247267
+  type: 'test'
+  ...
+# Subtest: Projected null velocities produce negligible instantaneous tip velocity
+ok 4 - Projected null velocities produce negligible instantaneous tip velocity
+  ---
+  duration_ms: 2.856369
+  type: 'test'
+  ...
+# Subtest: Null-space motion changes posture and holds a fixed tool point over 1,200 steps
+ok 5 - Null-space motion changes posture and holds a fixed tool point over 1,200 steps
+  ---
+  duration_ms: 78.833331
+  type: 'test'
+  ...
+# Subtest: Trefoil tracking solves new 3D positions over two complete loops
+ok 6 - Trefoil tracking solves new 3D positions over two complete loops
+  ---
+  duration_ms: 66.425732
+  type: 'test'
+  ...
+# Subtest: Jacobi eigensystem has orthonormal axes and satisfies the Gram eigenproblem
+ok 7 - Jacobi eigensystem has orthonormal axes and satisfies the Gram eigenproblem
+  ---
+  duration_ms: 3.592995
+  type: 'test'
+  ...
+# Subtest: Unreachable targets retain a nonzero residual without breaking limits
+ok 8 - Unreachable targets retain a nonzero residual without breaking limits
+  ---
+  duration_ms: 6.664292
+  type: 'test'
+  ...
+# Subtest: Rank-deficient and zero Jacobians remain numerically finite
+ok 9 - Rank-deficient and zero Jacobians remain numerically finite
+  ---
+  duration_ms: 2.05408
+  type: 'test'
+  ...
+# Subtest: Invalid inputs fail clearly rather than propagating NaNs
+ok 10 - Invalid inputs fail clearly rather than propagating NaNs
+  ---
+  duration_ms: 0.927117
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 290.623103

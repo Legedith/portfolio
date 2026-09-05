@@ -76,6 +76,16 @@ def check(skip_legacy=False):
             errors.append('Expected three selected projects')
         if any(a.get('src', '').startswith(('http:', 'https:', '//')) for t, a in doc.tags if t == 'script'):
             errors.append('Unexpected third-party script')
+    for name in ('kinematics.js', 'renderer.js', 'research.js'):
+        file = ROOT / 'assets' / name
+        if not file.is_file():
+            errors.append(f'Missing module: {name}')
+            continue
+        for imported in re.findall(r"from ['\"]([^'\"]+)['\"]", file.read_text()):
+            if not imported.startswith('./') or not (file.parent / imported).is_file():
+                errors.append(f'Missing or non-local module: {name} -> {imported}')
+    if not (ROOT / 'METHODS.md').is_file():
+        errors.append('Missing method note')
     if not (ROOT / '.nojekyll').is_file():
         errors.append('Missing .nojekyll')
     for error in errors:

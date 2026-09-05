@@ -1,0 +1,1 @@
+{"name":"legedith-kinematic-study","private":true,"type":"module","scripts":{"test":"node --test tests/kinematics.test.mjs"}}

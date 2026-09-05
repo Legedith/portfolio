@@ -3,162 +3,70 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#171c19">
-  <meta name="description" content="Human ideas. Robot hands. The interactive robotics playground of Jatin Dehmiwal, aka Legedith. Draw with a robot, then explore the real experiments.">
+  <meta name="theme-color" content="#f4f3ee">
+  <meta name="description" content="Jatin Dehmiwal / Legedith. Robotics, embodied AI, and how machines behave. Explore a seven-joint inverse-kinematics study, running entirely in your browser.">
+  <meta property="og:title" content="Legedith — Intelligence, embodied.">
+  <meta property="og:description" content="One point. Many possible movements. A live kinematic study and selected work by Jatin Dehmiwal.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Legedith — Human ideas. Robot hands.">
-  <meta property="og:description" content="A small robot. A blank page. Your move. The work and experiments of Jatin Dehmiwal.">
   <meta property="og:url" content="https://legedith.github.io/">
   <meta name="twitter:card" content="summary">
   <link rel="canonical" href="https://legedith.github.io/">
-  <link rel="icon" href="assets/lab-mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/lab.css">
-  <script src="assets/lab.js" defer></script>
-  <title>Legedith — Human ideas. Robot hands.</title>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Jatin Dehmiwal","alternateName":"Legedith","url":"https://legedith.github.io/","sameAs":["https://github.com/Legedith","https://www.linkedin.com/in/legedith/","https://devpost.com/Legedith"],"knowsAbout":["Robotics","Artificial intelligence","Augmented reality"]}</script>
+  <link rel="icon" href="assets/research-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/research.css">
+  <script type="module" src="assets/research.js"></script>
+  <title>Jatin Dehmiwal / Legedith — Robotics & embodied AI</title>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Jatin Dehmiwal","alternateName":"Legedith","url":"https://legedith.github.io/","sameAs":["https://github.com/Legedith","https://www.linkedin.com/in/legedith/"],"knowsAbout":["Robotics","Artificial intelligence","Augmented reality"]}</script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header class="header wrap">
-    <a class="brand" href="#top" aria-label="Legedith, home"><span class="brand-icon" aria-hidden="true"><i></i><i></i></span>legedith<span class="brand-period">.</span></a>
-    <span class="header-note mono">Independent experiments<br>in curious machines</span>
-    <nav aria-label="Main navigation"><a href="#work">The work</a><a href="#human" data-about>The human</a><a class="hello-link" href="#contact">Say hello <span aria-hidden="true">↗</span></a></nav>
+    <a class="identity" href="#top" aria-label="Legedith, home"><span class="identity-mark" aria-hidden="true">l<span>g</span></span><span>Jatin Dehmiwal<span class="handle">/ legedith</span></span></a>
+    <nav aria-label="Main navigation"><a href="#work">Work</a><a href="https://github.com/Legedith/Legedith/blob/main/FIELD_NOTES.md">Notes <span aria-hidden="true">↗</span></a><a href="#contact">Contact</a></nav>
   </header>
   <main id="main">
-    <section class="hero wrap" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="tiny-cross" aria-hidden="true">+</span> The personal lab of Jatin Dehmiwal</p>
-        <h1 id="hero-title">Human ideas.<br>Robot <em>hands.</em></h1>
-        <p class="intro">I build robots, AI experiments,<br>and the occasional strange thing.</p>
-        <a class="primary" id="take-controls" href="#lab">Take the controls <span aria-hidden="true">↗</span></a>
-        <div class="hero-foot"><span class="coordinate" aria-hidden="true">✳</span><p class="mono">A little less scrolling.<br>A little more <span>doing.</span></p></div>
-      </div>
-      <section class="lab" id="lab" aria-labelledby="lab-title">
-        <div class="lab-top mono"><h2 id="lab-title"><span class="status-light" aria-hidden="true"></span>LE–G1 / Your lab partner</h2><span class="sim-label">Browser simulation</span></div>
-        <div class="stage" id="stage">
-          <div class="scene-label mono" aria-hidden="true">Specimen 001<br>Endlessly curious.</div>
-          <svg id="robot-scene" viewBox="0 0 640 560" xmlns="http://www.w3.org/2000/svg" role="group" aria-labelledby="scene-title scene-desc">
-            <title id="scene-title">LE-G1, an interactive drawing robot</title>
-            <desc id="scene-desc">Draw on the paper with a finger or mouse. The robot arm follows. Or use Surprise me and Replay. On the focused paper, arrow keys move the pencil, Space toggles drawing, and Enter replays.</desc>
-            <defs>
-              <linearGradient id="shell" x1="0" y1="0" x2="1" y2=".9"><stop stop-color="#f4eddb"/><stop offset=".55" stop-color="#dcd3ba"/><stop offset="1" stop-color="#aba68e"/></linearGradient>
-              <linearGradient id="side" x1="0" x2="1"><stop stop-color="#958f79"/><stop offset="1" stop-color="#c9bda2"/></linearGradient>
-              <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#263e32"/><stop offset="1" stop-color="#11211b"/></linearGradient>
-              <radialGradient id="halo"><stop stop-color="#aec899" stop-opacity=".11"/><stop offset="1" stop-color="#aec899" stop-opacity="0"/></radialGradient>
-              <pattern id="graph" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#a9b7a2" stroke-opacity=".065"/></pattern>
-              <pattern id="paper-grid" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="#aaa591" opacity=".35"/></pattern>
-              <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><path d="M0 1h4" stroke="#b9ff98" stroke-opacity=".055"/></pattern>
-              <clipPath id="paper-clip"><rect x="150" y="386" width="428" height="145" rx="4"/></clipPath>
-            </defs>
-            <g aria-hidden="true">
-              <rect width="640" height="560" fill="url(#graph)"/>
-              <ellipse cx="315" cy="236" rx="255" ry="245" fill="url(#halo)"/>
-              <circle cx="307" cy="247" r="205" fill="none" stroke="#b4c5a2" stroke-opacity=".13" stroke-dasharray="3 10"/>
-              <path d="M20 55V25h30M590 25h30v30M20 495v30h30M590 525h30v-30" fill="none" stroke="#9ea894" stroke-opacity=".4"/>
-              <text x="40" y="452" class="svg-micro" transform="rotate(-90 40 452)">IDEAS → ACTION → FEEDBACK</text>
-              <ellipse cx="318" cy="434" rx="140" ry="23" fill="#000" opacity=".27"/>
-              <g class="skin">
-                <path d="M260 362l-12 47m82-47 13 47" stroke="#0f1511" stroke-width="30" stroke-linecap="round"/>
-                <path d="M260 362l-12 47m82-47 13 47" stroke="url(#shell)" stroke-width="21" stroke-linecap="round"/>
-                <path d="M245 405c-25-7-42 4-43 18v6h66v-18m75-6c28-7 45 4 47 18v6h-67v-18" fill="url(#shell)" stroke="#101811" stroke-width="3"/>
-                <path d="M205 422h59m64 0h58" stroke="#8b8774" stroke-width="2"/>
-              </g>
-              <g id="wave-arm">
-                <path d="M237 281 164 320 140 275" stroke="#101811" stroke-width="31" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                <path class="skin" d="M237 281 164 320 140 275" stroke="url(#shell)" stroke-width="24" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="164" cy="320" r="16" fill="#232c23" stroke="#b6b199" stroke-width="5"/><circle cx="164" cy="320" r="5" fill="#a4a48e"/>
-                <g class="skin"><path d="M132 280c-10-8-18-19-11-22 5-2 8 4 10 6l-4-27c-1-8 7-9 9-1l4 18 1-31c0-8 9-7 9 1v31l5-19c3-7 11-4 9 3l-6 29c-2 11-9 17-17 17Z" fill="url(#shell)" stroke="#111a13" stroke-width="3"/><path d="m136 274 12-5" stroke="#8c8872" stroke-width="2"/></g>
-              </g>
-              <g class="torso">
-                <rect class="skin" x="228" y="253" width="139" height="129" rx="32" fill="url(#shell)" stroke="#121911" stroke-width="4"/>
-                <path class="skin" d="M346 264c11 11 12 27 12 49v31c0 16-8 25-19 29" fill="none" stroke="#8a8772" stroke-width="3"/>
-                <rect x="248" y="277" width="94" height="65" rx="10" fill="#242f25" stroke="#a4a18b" stroke-width="3"/>
-                <path d="M260 310h13l6-12 12 26 10-20 7 6h19" fill="none" stroke="#c4ed9c" stroke-width="2.5" stroke-linecap="round"/>
-                <circle cx="262" cy="360" r="5" fill="#e89465" stroke="#8e7154" stroke-width="2"/>
-                <path d="M307 354v10m7-10v10m7-10v10m7-10v10" stroke="#7f816c" stroke-width="2"/>
-                <path class="skin" d="M278 246v15h37v-15" fill="#a9aa92" stroke="#182116" stroke-width="3"/>
-              </g>
-              <g id="robot-head">
-                <path d="M291 94 284 55" stroke="#1a2118" stroke-width="8"/><path d="M291 94 284 55" stroke="#b0b296" stroke-width="4"/>
-                <circle id="antenna" cx="283" cy="48" r="11" fill="#f39667" stroke="#21251b" stroke-width="3"/>
-                <circle cx="280" cy="45" r="3" fill="#ffdbad"/>
-                <rect class="skin" x="183" y="140" width="23" height="54" rx="9" fill="url(#side)" stroke="#101910" stroke-width="3"/>
-                <rect class="skin" x="409" y="141" width="21" height="51" rx="8" fill="url(#side)" stroke="#101910" stroke-width="3"/>
-                <rect class="skin" x="198" y="95" width="220" height="157" rx="39" fill="url(#side)" stroke="#101910" stroke-width="4"/>
-                <rect class="skin" x="193" y="91" width="216" height="153" rx="38" fill="url(#shell)" stroke="#101910" stroke-width="3"/>
-                <path class="skin" d="M208 118q5-17 28-17h107" fill="none" stroke="#fff9e9" stroke-opacity=".8" stroke-width="3" stroke-linecap="round"/>
-                <rect x="213" y="116" width="175" height="104" rx="26" fill="#101f17" stroke="#b2af94" stroke-width="4"/>
-                <rect x="219" y="122" width="163" height="92" rx="21" fill="url(#glass)"/>
-                <path d="M228 155v-13q0-11 11-11h45" stroke="#829f75" stroke-opacity=".24" stroke-width="3" fill="none" stroke-linecap="round"/>
-                <g id="gaze"><g id="eyes"><rect x="248" y="143" width="22" height="33" rx="10" fill="#c4ed9c"/><rect x="325" y="143" width="22" height="33" rx="10" fill="#c4ed9c"/><rect x="252" y="147" width="5" height="10" rx="2" fill="#efffd8"/><rect x="329" y="147" width="5" height="10" rx="2" fill="#efffd8"/></g><path id="smile" d="M284 183q16 16 31 0" stroke="#c4ed9c" stroke-width="4" stroke-linecap="round" fill="none"/></g>
-                <rect x="219" y="122" width="163" height="92" rx="21" fill="url(#scan)"/>
-                <circle cx="216" cy="231" r="3" fill="#7d826e"/><circle cx="386" cy="231" r="3" fill="#7d826e"/>
-                <text x="280" y="235" class="serial">LE–G1</text>
-              </g>
-              <g class="xray-lines" fill="none" stroke="#c4ed9c" stroke-width="1.5" stroke-dasharray="5 5"><path d="M296 112v249M227 170h148M248 290l95 45m0-45-95 45M260 370l-12 45m82-45 13 45"/><circle cx="299" cy="308" r="43"/></g>
-              <g id="paper">
-                <rect x="137" y="379" width="454" height="164" rx="9" fill="#090f0b" opacity=".35"/>
-                <rect x="141" y="372" width="444" height="167" rx="6" fill="#eae3d0" stroke="#b9b398" stroke-width="2"/>
-                <rect x="150" y="386" width="428" height="145" fill="url(#paper-grid)"/>
-                <path d="m163 369 55-2 1 11-57 4Z" fill="#b4b891" opacity=".75"/>
-                <path d="m515 368 44 4-1 10-45-4Z" fill="#b4b891" opacity=".75"/>
-                <text x="159" y="393" class="paper-label">HUMAN INPUT / ROBOT OUTPUT</text>
-                <text x="556" y="526" class="paper-label" text-anchor="end">01</text>
-                <g id="ink" clip-path="url(#paper-clip)" fill="none" stroke="#ba5835" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></g>
-                <g id="paper-hint"><text x="273" y="458" class="paper-invite">Your move.</text><text x="274" y="479" class="paper-sub">DRAG TO DRAW SOMETHING.</text><path d="M469 460q31-5 49 17m-2-12 3 13-14-1" fill="none" stroke="#95977d" stroke-width="1.5"/></g>
-              </g>
-              <g id="drawing-arm" pointer-events="none">
-                <g id="upper-arm" transform="translate(368 279) rotate(-4.36)"><path d="M0 0H156" stroke="#131b12" stroke-width="33" stroke-linecap="round"/><path class="skin" d="M0 0H156" stroke="#c7c6ad" stroke-width="26" stroke-linecap="round"/><path class="skin" d="M23-7H128" stroke="#f4eddb" stroke-width="3" stroke-linecap="round"/></g>
-                <g id="forearm" transform="translate(523.55 267.14) rotate(100.42)"><path d="M0 0H180" stroke="#131b12" stroke-width="28" stroke-linecap="round"/><path class="skin" d="M0 0H180" stroke="#c7c6ad" stroke-width="21" stroke-linecap="round"/><path class="skin" d="M20-5H154" stroke="#f4eddb" stroke-width="2.5" stroke-linecap="round"/></g>
-                <circle cx="368" cy="279" r="19" fill="#252e24" stroke="#c6c3a6" stroke-width="6"/><circle cx="368" cy="279" r="6" fill="#d9d3b8"/>
-                <g id="elbow" transform="translate(523.55 267.14)"><circle r="17" fill="#222c22" stroke="#c6c3a6" stroke-width="5"/><circle r="5" fill="#f39667"/></g>
-                <g id="tool" transform="translate(491 475)"><rect class="skin" x="-13" y="-45" width="26" height="27" rx="8" fill="#bfc0a5" stroke="#182016" stroke-width="3"/><path d="M-4-37h8v28L0 0-4-9Z" fill="#ee9566" stroke="#3f4634" stroke-width="1.5"/><path d="m-2-5 2 5 2-5" fill="#263824"/><path d="M-1-33v21" stroke="#ffcea0" stroke-width="1.5"/></g>
-              </g>
-            </g>
-          </svg>
-          <div id="draw-zone" class="drawing-surface" tabindex="0" role="group" aria-label="Drawing pad" aria-describedby="pad-help" hidden></div>
-          <button class="poke" id="greet" type="button" hidden aria-label="Say hello to the robot"><span aria-hidden="true">↗</span><span class="poke-label">Psst. Tap me.</span></button>
-          <span class="stage-signature mono" aria-hidden="true">Designed to be<br>played with.</span>
+    <section class="intro wrap" aria-labelledby="intro-title"><div><p class="eyebrow">Robotics · Embodied AI · Machine behaviour</p><h1 id="intro-title">Intelligence, <em>embodied.</em></h1></div><p class="intro-note">I build experiments to understand<br>how machines adapt, act, and fail.</p></section>
+    <section class="study wrap" id="study" aria-labelledby="study-title">
+      <div class="study-heading"><h2 id="study-title"><span class="mono">Interactive study / 001</span><span class="study-name">The geometry of possibility</span></h2><span class="mono study-spec">7 revolute joints · 3 position constraints</span></div>
+      <div class="viewport" id="viewport">
+        <canvas id="scene" aria-label="Three-dimensional seven-joint robot arm. Use the target button and controls below to explore inverse kinematics." role="img" hidden></canvas>
+        <svg class="fallback" id="fallback" viewBox="0 0 1100 460" role="img" aria-labelledby="fallback-title"><title id="fallback-title">Schematic of a seven-joint arm. Enable JavaScript for the live solver.</title><g fill="none" stroke="#d5d9d0" stroke-width="1"><path d="M340 380 880 380M365 400 905 400M390 420 930 420M320 355 840 355M330 350l90 80m30-80 90 80m30-80 90 80m30-80 90 80"/></g><g fill="none" stroke="#929d97" stroke-linejoin="round" stroke-linecap="round"><path d="M489 362v-65l35-129 41-20 144 57 32 13 56-29 40 17" stroke-width="30"/><path d="M489 362v-65l35-129 41-20 144 57 32 13 56-29 40 17" stroke="#dddeda" stroke-width="22"/></g><g fill="#414c4c" stroke="#e5e5dc" stroke-width="4"><circle cx="489" cy="362" r="18"/><circle cx="489" cy="297" r="20"/><circle cx="524" cy="168" r="19"/><circle cx="565" cy="148" r="17"/><circle cx="709" cy="205" r="15"/><circle cx="741" cy="218" r="13"/><circle cx="797" cy="189" r="12"/></g><path d="M460 373h58v15h-58Z" fill="#adb4aa"/><g stroke="#9a482f" fill="none"><circle cx="837" cy="206" r="10"/><path d="M821 206h32m-16-16v32"/></g></svg>
+        <div class="experiment-menu" id="experiment-menu" hidden>
+          <p class="mono menu-caption">Choose an experiment</p>
+          <div class="mode-buttons" role="group" aria-label="Experiment">
+            <button class="mode" data-mode="reach" type="button" aria-pressed="true"><span class="mode-number">01</span><span><strong>Reach a target</strong><span class="mode-description">Position → joint angles</span></span><span class="mode-arrow" aria-hidden="true">↗</span></button>
+            <button class="mode" data-mode="null" type="button" aria-pressed="false"><span class="mode-number">02</span><span><strong>Hold the point</strong><span class="mode-description">Motion in the null space</span></span><span class="mode-arrow" aria-hidden="true">↗</span></button>
+            <button class="mode" data-mode="trace" type="button" aria-pressed="false"><span class="mode-number">03</span><span><strong>Trace a knot</strong><span class="mode-description">A path through three dimensions</span></span><span class="mode-arrow" aria-hidden="true">↗</span></button>
+          </div>
+          <p class="experiment-observation" id="observation">Choose a point.<br>The arm finds a way.</p>
         </div>
-        <p id="pad-help" class="sr-only">Drag on the paper to draw. Keyboard: use arrow keys to move, Space to lower or lift the pen, Enter to replay, and Escape to stop. Tab leaves the drawing pad. Only the paper captures touch; the rest of the page scrolls normally.</p>
-        <div class="lab-controls" id="lab-controls" hidden>
-          <button class="surprise" id="surprise" type="button">Surprise me <span aria-hidden="true">✳</span></button>
-          <button id="replay" type="button" disabled>Replay <span aria-hidden="true">↺</span></button>
-          <button id="clear" type="button">Clear <span aria-hidden="true">×</span></button>
-          <button class="xray" id="xray" type="button" aria-pressed="false">X-ray <span class="toggle" aria-hidden="true"></span></button>
-        </div>
-        <div class="lab-bottom"><p id="robot-status" role="status">A small robot. A blank page. Your move.</p><span class="joint-readout mono" aria-hidden="true" id="joint-readout">2 joints / ∞ possibilities</span></div>
-        <noscript><p class="no-js">The robot needs JavaScript to play. All projects and contact links still work below.</p></noscript>
-      </section>
-    </section>
-    <div class="divider wrap"><span class="mono">Not just a simulation.</span><a href="#work" class="mono">Meet the real experiments <span aria-hidden="true">↓</span></a></div>
-    <section class="work wrap" id="work" aria-labelledby="work-title">
-      <div class="section-top"><div><p class="eyebrow">01 / Things I've sent into the world</p><h2 id="work-title">Proof of <em>curiosity.</em></h2></div><a class="all-work" href="https://github.com/Legedith?tab=repositories">All experiments <span aria-hidden="true">↗</span></a></div>
-      <div class="project-rail">
-        <a class="project-card" data-project="brushos" href="https://github.com/Legedith/BrushOS-Robotic-painting-in-action">
-          <div class="project-art brush-art" aria-hidden="true"><span class="art-stamp mono">Physical world / 01</span><svg viewBox="0 0 380 205" fill="none"><path d="M133 173h130l42 20H95Z" fill="#d5d0b9" stroke="#666e57"/><path d="M159 171c35-42 31 26 70-8" stroke="#ad5435" stroke-width="4" stroke-linecap="round"/><path d="m92 159 21-25 56-85 76 31-31 74" stroke="#1e281e" stroke-width="25" stroke-linecap="round" stroke-linejoin="round"/><path d="m113 134 56-85 76 31-31 74" stroke="#d3cbae" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/><circle cx="169" cy="49" r="14" fill="#263023" stroke="#c5c19f" stroke-width="4"/><circle cx="244" cy="80" r="13" fill="#263023" stroke="#c5c19f" stroke-width="4"/><path d="m213 145 5 23" stroke="#ed9968" stroke-width="5"/><path d="M66 182h73l-8-22H76Z" fill="#bcb99d" stroke="#283323" stroke-width="3"/><circle cx="300" cy="45" r="17" stroke="#a4ab87" stroke-dasharray="2 4"/><path d="M294 45h12m-6-6v12" stroke="#a4ab87"/></svg><span class="art-caption mono">Real brush. Real feedback.</span></div>
-          <div class="card-info"><span class="card-category mono">Embodied AI</span><h3>BrushOS <span aria-hidden="true">↗</span></h3><p>A robot. A brush. Actual paint.</p></div>
-        </a>
-        <a class="project-card" data-project="dungeons" href="https://github.com/Legedith/Dungeons">
-          <div class="project-art dungeon-art" aria-hidden="true"><span class="art-stamp mono">Playable ideas / 02</span><div class="terminal-window"><div class="terminal-bar"><i></i><i></i><i></i><span>adventure.sh</span></div><pre>      ┌───────┐
-      │  ◇    │
-  ────┘       └────
-
-<span>$ cd the_unknown/</span><b>▊</b></pre></div><span class="art-caption mono">Learning, disguised as play.</span></div>
-          <div class="card-info"><span class="card-category mono">Creative tools</span><h3>Dungeons <span aria-hidden="true">↗</span></h3><p>The terminal becomes an adventure.</p></div>
-        </a>
-        <a class="project-card" data-project="space" href="https://github.com/Legedith/Space-exploARtion">
-          <div class="project-art space-art" aria-hidden="true"><span class="art-stamp mono">Other dimensions / 03</span><svg viewBox="0 0 380 205" fill="none"><circle cx="194" cy="104" r="54" fill="#b6bba0" stroke="#ccd0b8"/><path d="M145 91c24 12 62 15 93 0m-98 20c35 19 69 21 104 1m-82 29c26 8 51 8 72 0m-66-83c-7 20 5 29 4 44" stroke="#8a9277" stroke-width="5"/><ellipse cx="194" cy="105" rx="99" ry="25" transform="rotate(-28 194 105)" stroke="#e1d6b5" stroke-width="8"/><path d="M136 51a54 54 0 0 1 101 53" fill="#b6bba0" transform="translate(3 0)"/><circle cx="77" cy="72" r="2" fill="#dedcc0"/><circle cx="287" cy="48" r="2" fill="#dedcc0"/><path d="M293 140v14m-7-7h14M86 138v8m-4-4h8M206 24v8m-4-4h8" stroke="#c4c7a9"/><path d="M58 95V49h46m177 122h45v-46" stroke="#849579" stroke-dasharray="3 5"/></svg><span class="art-caption mono">A little space, in your space.</span></div>
-          <div class="card-info"><span class="card-category mono">Augmented reality</span><h3>Space ExploARtion <span aria-hidden="true">↗</span></h3><p>Space exploration, off the screen.</p></div>
-        </a>
+        <button id="target-handle" class="target-handle" type="button" aria-label="Move target. Drag, or use arrow keys for X and Z; Page Up and Page Down for depth." aria-describedby="target-help" hidden><span class="target-tooltip">Drag the target</span></button>
+        <div class="scene-tools" id="scene-tools" hidden><button id="orbit-left" type="button" aria-label="Rotate view left">↶</button><span class="mono" id="view-label">Orthographic</span><button id="orbit-right" type="button" aria-label="Rotate view right">↷</button></div>
+        <span class="scene-stamp mono">Kinematic model<br>Computed locally. Not a recording.</span>
       </div>
-      <p class="swipe-hint mono">Swipe to explore →</p>
+      <p class="sr-only" id="target-help">Arrow keys move the target horizontally and vertically. Page Up and Page Down change depth. Shift increases the step. On touch screens, only the target captures dragging; the rest of the view scrolls normally.</p>
+      <div class="instrument" id="instrument" hidden>
+        <div class="parameter"><label for="parameter" id="parameter-label">Target depth <span>y</span></label><input type="range" id="parameter" min="-600" max="600" step="5" value="-165" aria-label="Target depth in millimetres"><output for="parameter" id="parameter-value">−165 mm</output></div>
+        <div class="transport"><button id="play" class="play" type="button" hidden>Pause</button><button id="reset" type="button">Reset <span aria-hidden="true">↺</span></button></div>
+        <div class="overlays"><button id="axes" type="button" aria-pressed="false">Joint axes</button><button id="ellipsoid" type="button" aria-pressed="false">Dexterity</button></div>
+      </div>
+      <div class="readout" id="readout" hidden>
+        <div><span class="mono">Position error</span><output id="error">—</output></div><div><span class="mono">Local freedoms</span><output id="freedom">—</output></div><div class="conditioning"><span class="mono">σ min / σ max</span><output id="condition">—</output></div><span class="solver-state mono" id="solver-state">Initialising</span><a class="method-link" href="METHODS.md" id="method-link">Method & limits <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="caption"><p><span class="caption-label">Fig. 01</span> <span id="figure-caption">Seven joints. One tool point. More than one way to get there.</span></p><span class="mono">Position only · Orientation free</span></div>
+      <p id="status" class="sr-only" role="status"></p>
+      <noscript><p class="no-js">The live solver needs JavaScript. The study above is a static schematic; all work and contact links remain available.</p></noscript>
+      <p id="load-error" class="no-js" hidden>The live study could not load. Project links and contact details still work below.</p>
     </section>
-    <section class="human-strip wrap" id="human" aria-label="About Jatin"><div class="human-symbol" aria-hidden="true">J.</div><p><strong>Jatin. Also answers to Legedith.</strong><span>Robotics, AI, and a healthy amount of “what happens if…?”</span></p><a href="https://www.linkedin.com/in/legedith/" data-about>Meet the human <span aria-hidden="true">↗</span></a></section>
-    <section class="contact wrap" id="contact" aria-labelledby="contact-title"><div><p class="eyebrow">02 / Leave room for the unexpected</p><h2 id="contact-title">Got a <em>weird idea?</em></h2></div><a class="contact-button" href="mailto:jatindehmiwal@gmail.com">Let's talk <span aria-hidden="true">↗</span></a></section>
+    <section class="work wrap" id="work" aria-labelledby="work-title"><div class="section-heading"><p class="eyebrow">Selected work</p><h2 id="work-title">Ideas, tested <em>in the world.</em></h2></div>
+      <div class="works">
+        <article class="work-item" data-project="brushos"><span class="work-index mono">01 / Embodied AI</span><h3>BrushOS</h3><p>A robot that paints, observes,<br>and changes its next move.</p><div><a href="https://www.youtube.com/watch?v=bNbsj1z06Kk">Watch the robot ↗</a><a href="https://github.com/Legedith/BrushOS-Robotic-painting-in-action">Code ↗</a></div></article>
+        <article class="work-item" data-project="notes"><span class="work-index mono">02 / Reading & inquiry</span><h3>Machine behaviour</h3><p>Notes on agents, bodies,<br>feedback, and evaluation.</p><div><a href="https://github.com/Legedith/Legedith/blob/main/FIELD_NOTES.md">Read the field notes ↗</a></div></article>
+        <article class="work-item" data-project="dungeons"><span class="work-index mono">03 / Human–computer interaction</span><h3>Dungeons</h3><p>Learning the command line<br>by exploring, not memorising.</p><div><a href="https://github.com/Legedith/Dungeons">Explore the project ↗</a></div></article>
+      </div><a class="all-work" href="https://github.com/Legedith?tab=repositories">All experiments <span aria-hidden="true">↗</span></a>
+    </section>
+    <section class="contact wrap" id="contact" aria-labelledby="contact-title"><div><p class="eyebrow">The human behind the work</p><h2 id="contact-title">Jatin Dehmiwal.</h2><p>Robotics, AI, and how machines behave.<br>Always in progress.</p></div><div class="contact-links"><a href="mailto:jatindehmiwal@gmail.com">Start a conversation <span aria-hidden="true">↗</span></a><div><a href="https://github.com/Legedith">GitHub ↗</a><a href="https://www.linkedin.com/in/legedith/">LinkedIn ↗</a></div></div></section>
   </main>
-  <footer class="footer wrap"><span class="mono">© <span id="year">2026</span> Legedith · Always in progress.</span><div class="footer-links"><a href="https://github.com/Legedith">GitHub ↗</a><a href="https://www.linkedin.com/in/legedith/">LinkedIn ↗</a><a href="https://github.com/Legedith/ai-thoughts">Field notes ↗</a></div><div class="preferences" id="preferences" hidden><button id="motion" type="button" aria-pressed="false">Motion on</button><button id="sound" type="button" aria-pressed="false">Sound off</button></div></footer>
-  <dialog id="about-dialog" aria-labelledby="about-title"><button class="close-dialog" type="button" aria-label="Close about">×</button><span class="dialog-kicker mono">The human behind the machine</span><h2 id="about-title">Still in <em>progress.</em></h2><p class="dialog-lead">I'm Jatin Dehmiwal. Most places, I'm Legedith.</p><p>I build experiments to understand how robots and AI agents adapt, cooperate, and fail.</p><p>Robotics. AI. Augmented reality. Getting an idea out of my head and finding out where it breaks.</p><div class="dialog-links"><a class="primary" href="https://www.linkedin.com/in/legedith/">The backstory ↗</a><a href="https://github.com/Legedith/Legedith/blob/main/FIELD_NOTES.md">What I'm thinking about ↗</a></div><a class="archive-link mono" href="archive-2021.html">Visit the 2021 time capsule ↗</a></dialog>
-  <dialog id="project-dialog" aria-labelledby="project-title"><button class="close-dialog" type="button" aria-label="Close project">×</button><span id="project-type" class="dialog-kicker mono"></span><h2 id="project-title"></h2><p id="project-hook" class="dialog-lead"></p><p id="project-description"></p><p class="mono project-tech" id="project-tech"></p><div class="dialog-links" id="project-links"></div><p id="project-caveat" class="project-caveat"></p></dialog>
+  <footer class="footer wrap"><span class="mono">© <span id="year">2026</span> Legedith</span><span class="footer-note mono">An open notebook, not a finished answer.</span><button id="motion" type="button" aria-pressed="true" hidden>Motion on</button></footer>
+  <dialog id="method-dialog" aria-labelledby="method-title"><button type="button" class="dialog-close" aria-label="Close method">×</button><p class="eyebrow">Study 001 / Technical note</p><h2 id="method-title">Redundancy is<br><em>room to move.</em></h2><p>Seven revolute joints control a point in three dimensions. When the position Jacobian has rank three, four local joint-space directions remain available without moving that point to first order.</p><div class="equation">Δq = Jᵀ(JJᵀ + λ²I)⁻¹ Δx</div><p>The reach solver uses damped least squares, joint bounds, and a bounded line search. “Hold the point” projects a posture change into the Jacobian’s null space, then corrects the finite-step position error.</p><div class="equation">Δq<sub>null</sub> = (I − J⁺J) v</div><p>That projector is built from an orthonormal row basis—not from the damped inverse above. The error shown on the page is measured from forward kinematics.</p><details><summary>Model, limitations & controls</summary><p>This is an illustrative model, not a commercial robot or hardware connection. Geometry uses metres; position error is displayed in millimetres. Orientation is free. There are joint bounds, but no collision checking, dynamics, torque limits, or global convergence guarantee.</p><p>“Dexterity” shows the local velocity manipulability ellipsoid, uniformly scaled for visibility. It is not a reachable workspace. “Trace a knot” solves IK along a trefoil; it does not play a saved joint animation.</p><p>Drag the target or use arrow keys. Page Up/Down changes depth. Rotate the view with the arrow buttons. With reduced motion, the slider explores discrete postures and curve points without autoplay.</p><label class="damping-label" for="damping">Damping λ <output id="damping-value">0.012</output></label><input type="range" id="damping" min="1" max="80" step="1" value="12" aria-label="Damping parameter in thousandths"></details><div class="references"><p class="eyebrow">Method references</p><a href="https://www.math.ucsd.edu/~sbuss/ResearchWeb/ikmethods/index.html">Buss · Introduction to inverse kinematics ↗</a><a href="https://modernrobotics.northwestern.edu/nu-gm-book-resource/5-3-singularities/">Lynch & Park · Jacobians and redundancy ↗</a><a href="https://modernrobotics.northwestern.edu/nu-gm-book-resource/5-4-manipulability/">Lynch & Park · Manipulability ↗</a><a href="https://github.com/Legedith/portfolio/blob/main/assets/kinematics.js">Inspect this solver’s source ↗</a></div></dialog>
 </body>
 </html>

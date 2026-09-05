@@ -14,7 +14,12 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           persist-credentials: false
-      - name: Validate static site
+      - name: Validate static site and local module imports
         run: python3 scripts/check_site.py
       - name: Check JavaScript syntax
-        run: node --check assets/lab.js
+        run: |
+          node --check assets/kinematics.js
+          node --check assets/renderer.js
+          node --check assets/research.js
+      - name: Verify numerical kinematics
+        run: node --test tests/kinematics.test.mjs
